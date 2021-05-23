@@ -19,7 +19,7 @@ const convertMilliSecondsToTime = (timeInMilliSeconds) => {
     return `${pad(minutes)}:${pad(seconds)}`
 }
 
-const CountDownTimer = ({minutes, onClick}) => {
+const CountDownTimer = ({minutes, onClick, style}) => {
 
     const [isStarted, setIsStarted] = useState(true);
     const initMinutesInMillis = convertMinuteToMilliSeconds(minutes);
@@ -59,7 +59,7 @@ const CountDownTimer = ({minutes, onClick}) => {
     }
 
     return (
-        <div>
+        <div style={style}>
             {isStarted ?
                 (<h2>`${state} : ${timeToCalculate.current}`</h2>) :
                 (<button onClick={resetComponent}>Resend SmS</button>)
