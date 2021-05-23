@@ -36,7 +36,6 @@ const CountDownTimer = ({minutes, onClick}) => {
     }
 
     const count = () => {
-        console.log("count")
         setState(convertMilliSecondsToTime(checkIfTimeLeft(calculateTimeLeftInMilliSeconds(timeToCalculate))));
     }
 
@@ -52,11 +51,11 @@ const CountDownTimer = ({minutes, onClick}) => {
     },[])
 
     const resetComponent = () => {
+        onClick && onClick();
         const newInit = convertMinuteToMilliSeconds(minutes);
         setState(convertMilliSecondsToTime(newInit));
         timeToCalculate.current = new Date().getTime() + initMinutesInMillis;
         setIsStarted(true);
-        onClick && onClick();
     }
 
     return (
