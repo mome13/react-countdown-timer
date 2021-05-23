@@ -61,7 +61,7 @@ const CountDownTimer = ({minutes, onClick, style}) => {
     return (
         <div style={style}>
             {isStarted ?
-                (<h2>`${state} : ${timeToCalculate.current}`</h2>) :
+                (<h2>{state}</h2>) :
                 (<button onClick={resetComponent}>Resend SmS</button>)
             }
         </div>
